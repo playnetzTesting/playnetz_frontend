@@ -24,7 +24,7 @@ export default function Home() {
                     className="w-full md:w-[75%] px-4 py-3 rounded-md md:rounded-l-md outline-none placeholder-neutral-600 text-[#33A4D8] font-medium"
                     placeholder="search your favourite movies"
                   />
-                  <Button className={"-ml-0 md:-ml-5 py-3 w-full md:w-auto"}>
+                  <Button className={"-ml-0 md:-ml-5 py-[0.8rem] w-full md:w-auto"}>
                     Let’s Have Fun
                   </Button>
                 </div>
@@ -33,7 +33,7 @@ export default function Home() {
                 <p className="text-center">Stream anywhere. Abort anytime</p>
               </div>
             </div>
-            <div className="absolute bottom-0 mb-6 p-4">
+            <div className="absolute bottom-0 mb-4 p-4">
               <p className="text-center">
                 Ready to Stream? Or Be the producer. Enter your email to reclaim
                 your membership
