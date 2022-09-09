@@ -13,7 +13,7 @@ export const PlaynetzNavbar = () => {
         <div className="flex items-center justify-between w-full">
           <Link href="/" passHref>
             <a>
-              <PlaynetzLogo width={130} height={40} />
+              <PlaynetzLogo width={120} height={29} />
             </a>
           </Link>
           <Button onClick={() => router.push('/auth/signIn')}>Sign In</Button>
