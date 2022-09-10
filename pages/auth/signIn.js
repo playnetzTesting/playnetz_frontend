@@ -115,7 +115,7 @@ export default function SignIn() {
                   <p className="text-white font-light text-sm">
                     Your first time?
                   </p>
-                  <Link href="/auth/signup" passHref>
+                  <Link href="/auth/signUp" passHref>
                     <a className="font-medium text-white ml-2">Sign Up</a>
                   </Link>
                 </div>
