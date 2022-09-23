@@ -64,7 +64,7 @@ export default function SignIn() {
                       <Button className="w-full">Sign In</Button>
                     </div>
                     <div className="w-full">
-                      <Link href="/auth/forgotPaassword" passHref>
+                      <Link href="/auth/forgotPassword" passHref>
                         <a className="text-[#33A4D8] text-md">
                           Forgot Password?
                         </a>
