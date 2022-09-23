@@ -8,7 +8,7 @@ export const PlaynetzNavbar = () => {
   const router = useRouter()
 
   return (
-    <nav className="shadow-md h-16 fixed top-0 left-0 w-full flex justify-center items-center p-4">
+    <nav className="shadow-md h-16 fixed top-0 left-0 w-full flex justify-center items-center p-6">
       <div className="w-full max-w-[1440px]">
         <div className="flex items-center justify-between w-full">
           <Link href="/" passHref>
