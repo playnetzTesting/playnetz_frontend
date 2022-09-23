@@ -16,7 +16,7 @@ export default function SignIn() {
         <link rel="icon" href="/favicon.ico" />
       </Head>
 
-      <main className="h-screen min-h-screen p-4 w-full">
+      <main className="h-screen min-h-screen p-6 w-full">
         <div className="flex flex-col items-center justify-center w-full">
           <div className="w-full max-w-[1440px]">
             <div className="w-full">

@@ -24,7 +24,7 @@ export default function Home() {
                     className="w-full md:w-[75%] px-4 py-3 rounded-md md:rounded-l-md outline-none placeholder-neutral-600 text-[#33A4D8] font-medium"
                     placeholder="search your favourite movies"
                   />
-                  <Button className={"-ml-0 md:-ml-5 py-[0.8rem] w-full md:w-auto"}>
+                  <Button className={"-ml-0 md:-ml-5 py-[0.8rem] rounded-l-none w-full md:w-auto"}>
                     Let’s Have Fun
                   </Button>
                 </div>
