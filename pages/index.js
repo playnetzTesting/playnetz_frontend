@@ -19,12 +19,16 @@ export default function Home() {
                 Entertainment is fun Get your 2nd month free
               </h2>
               <form className="w-full md:w-[65%] lg:w-[70%]">
-                <div className="flex flex-col md:flex-row w-full gap-4 md:gap-0 items-center justify-center">
+                <div className="grid grid-cols-3 items-stretch">
                   <input
-                    className="w-full md:w-[75%] px-4 py-3 rounded-md md:rounded-l-md outline-none placeholder-neutral-600 text-[#33A4D8] font-medium"
+                    className="w-full col-span-2 px-4 py-3 rounded-md md:rounded-l-md outline-none placeholder-neutral-600 text-[#33A4D8] font-medium"
                     placeholder="search your favourite movies"
                   />
-                  <Button className={"-ml-0 md:-ml-5 py-[0.8rem] rounded-l-none w-full md:w-auto"}>
+                  <Button
+                    className={
+                      "-ml-0 md:-ml-5 py-3 border-2 border-[#33A4D8] w-full"
+                    }
+                  >
                     Let’s Have Fun
                   </Button>
                 </div>
