@@ -5,6 +5,7 @@ export default function CustomInput({
   name,
   checked,
   onChange,
+  refs,
 }) {
   return (
     <input
@@ -15,6 +16,7 @@ export default function CustomInput({
       name={name}
       checked={checked}
       onChange={onChange}
+      ref={refs}
     />
   );
 }
