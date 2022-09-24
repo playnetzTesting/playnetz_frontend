@@ -1,9 +1,18 @@
 import Head from "next/head";
 import Layout from "../components/layout";
-import { StyledSearchButton } from "../styles/theme.js/theme";
+import { StyledSearchButton as StyledSubscribeButton } from "../styles/theme.js/theme";
 import CustomInput from "../components/customInput/customInput";
+import { useEffect, useRef } from "react";
 
 export default function Home() {
+  const inputRef = useRef(null);
+
+  useEffect(() => {
+    if (inputRef.current) {
+      inputRef.current.focus()
+    }
+  }, []);
+
   return (
     <div className="homeBackground">
       <Head>
@@ -24,10 +33,12 @@ export default function Home() {
                   <CustomInput
                     className="bg-white w-full col-span-2 placeholder-black text-black font-light tracking-normal"
                     placeholder="Enter Your Email"
+                    type="email"
+                    refs={inputRef}
                   />
-                  <StyledSearchButton className={"-ml-5 w-full"}>
+                  <StyledSubscribeButton className={"-ml-5 w-full"}>
                     Let’s Have Fun
-                  </StyledSearchButton>
+                  </StyledSubscribeButton>
                 </div>
               </form>
               <div>
