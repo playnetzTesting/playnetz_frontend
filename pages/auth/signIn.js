@@ -4,9 +4,14 @@ import { Button } from "../../components/button/button";
 import CustomInput from "../../components/customInput/customInput";
 import PlaynetzLogo from "../../components/logo/logo";
 import { BsFacebook } from "react-icons/bs";
+import { StyledBackButton } from "../../styles/theme.js/theme";
+import { useRouter } from "next/router";
+import { BackIcon } from "../../components/icons/backIcon";
 
 export default function SignIn() {
   const valueChange = () => {};
+
+  const router = useRouter();
 
   return (
     <div className="bg-[#050F14]">
@@ -19,14 +24,13 @@ export default function SignIn() {
       <main className="h-screen min-h-screen p-6 w-full">
         <div className="flex flex-col items-center justify-center w-full">
           <div className="w-full max-w-[1440px]">
-            <div className="w-full">
-              <Link href="/" passHref>
-                <a>
-                  <PlaynetzLogo width={120} height={29} />
-                </a>
-              </Link>
+            <div className="w-full absolute top-0 left-0 p-6">
+              <StyledBackButton onClick={() => router.push("/")}>
+                <BackIcon />
+                back
+              </StyledBackButton>
             </div>
-            <div className="mt-6 flex justify-center">
+            <div className="mt-24 flex justify-center">
               <div className="w-full md:max-w-[50%] lg:max-w-[30%] p-4 shadow-md rounded-md">
                 <h2 className="text-white text-4xl font-bold">Sign In</h2>
                 {/* form */}
@@ -53,7 +57,7 @@ export default function SignIn() {
                         className="w-auto accent-[#33A4D8]"
                         name="rememberme"
                         type="checkbox"
-                        checked
+                        checked={false}
                         onChange={valueChange}
                       />
                       <label htmlFor="rememberme" className="text-white ml-4">
@@ -65,8 +69,8 @@ export default function SignIn() {
                     </div>
                     <div className="w-full">
                       <Link href="/auth/forgotPassword" passHref>
-                        <a className="text-[#33A4D8] text-md">
-                          Forgot Password?
+                        <a className="text-[#33A4D8] font-medium focus:underline">
+                          forgot Password ?
                         </a>
                       </Link>
                     </div>
@@ -111,12 +115,12 @@ export default function SignIn() {
                     Sign in with facebook
                   </Button>
                 </div>
-                <div className="flex mt-4 justify-center items-center">
-                  <p className="text-white font-light text-sm">
+                <div className="flex mt-4 justify-start gap-x-2 items-center">
+                  <p className="text-white">
                     Your first time?
                   </p>
                   <Link href="/auth/signUp" passHref>
-                    <a className="font-medium text-white ml-2">Sign Up</a>
+                    <a className="text-[#33A4D8] focus:underline text-lg font-semibold">Sign Up</a>
                   </Link>
                 </div>
               </div>

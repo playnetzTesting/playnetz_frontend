@@ -1,6 +1,7 @@
 import Head from "next/head";
-import { Button } from "../components/button/button";
 import Layout from "../components/layout";
+import { StyledSearchButton } from "../styles/theme.js/theme";
+import CustomInput from "../components/customInput/customInput";
 
 export default function Home() {
   return (
@@ -19,21 +20,21 @@ export default function Home() {
                 Entertainment is fun Get your 2nd month free
               </h2>
               <form className="w-full md:w-[65%] lg:w-[70%]">
-                <div className="flex flex-col md:flex-row w-full gap-4 md:gap-0 items-center justify-center">
-                  <input
-                    className="w-full md:w-[75%] px-4 py-3 rounded-md md:rounded-l-md outline-none placeholder-neutral-600 text-[#33A4D8] font-medium"
-                    placeholder="search your favourite movies"
+                <div className="grid grid-cols-3 items-stretch">
+                  <CustomInput
+                    className="bg-white w-full col-span-2 placeholder-black text-black font-light tracking-normal"
+                    placeholder="Enter Your Email"
                   />
-                  <Button className={"-ml-0 md:-ml-5 py-[0.8rem] rounded-l-none w-full md:w-auto"}>
+                  <StyledSearchButton className={"-ml-5 w-full"}>
                     Let’s Have Fun
-                  </Button>
+                  </StyledSearchButton>
                 </div>
               </form>
               <div>
                 <p className="text-center">Stream anywhere. Abort anytime</p>
               </div>
             </div>
-            <div className="absolute bottom-0 mb-4 p-4">
+            <div className="bottom-0 mb-4 p-4">
               <p className="text-center">
                 Ready to Stream? Or Be the producer. Enter your email to reclaim
                 your membership
