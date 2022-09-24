@@ -1,12 +1,14 @@
+import { StyledButton } from "../../styles/theme.js/theme";
+
 export const Button = ({ children, className, onClick }) => {
   return (
     <>
-      <button
+      <StyledButton
         onClick={onClick}
-        className={`bg-[#33A4D8] ${className} text-white rounded-l-md px-4 py-2`}
+        className={`${className} rounded-l-md px-4 py-2`}
       >
         {children}
-      </button>
+      </StyledButton>
     </>
   );
 };
