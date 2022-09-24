@@ -11,6 +11,11 @@ import { BackIcon } from "../../components/icons/backIcon";
 export default function SignIn() {
   const valueChange = () => {};
 
+  const onSubmit = (e) => {
+    e.preventDefault()
+    console.log("Stupid");
+  }
+
   const router = useRouter();
 
   return (
@@ -35,7 +40,7 @@ export default function SignIn() {
                 <h2 className="text-white text-4xl font-bold">Sign In</h2>
                 {/* form */}
                 <div className="flex items-center w-full mt-4">
-                  <form className="w-full flex flex-col gap-6">
+                  <form className="w-full flex flex-col gap-6" onSubmit={onSubmit}>
                     <div className="w-full">
                       <CustomInput
                         placeholder="email"
@@ -65,7 +70,7 @@ export default function SignIn() {
                       </label>
                     </div>
                     <div className="w-full">
-                      <Button className="w-full">Sign In</Button>
+                      <Button className="w-full" type="submit">Sign In</Button>
                     </div>
                     <div className="w-full">
                       <Link href="/auth/forgotPassword" passHref>
