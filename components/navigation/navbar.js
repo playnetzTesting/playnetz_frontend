@@ -1,7 +1,7 @@
 import Link from "next/link";
 import { useRouter } from "next/router";
 import { Button } from "../button/button";
-import PlaynetzLogo from "../logo/logo";
+import PlaynetzLogo from "../icons/logo";
 
 export const PlaynetzNavbar = () => {
   const router = useRouter();
