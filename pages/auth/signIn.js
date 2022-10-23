@@ -2,12 +2,10 @@ import Head from "next/head";
 import Link from "next/link";
 import { Button } from "../../components/button/button";
 import CustomInput from "../../components/customInput/customInput";
-import PlaynetzLogo from "../../components/icons/logo";
-import { BsFacebook } from "react-icons/bs";
 import { StyledBackButton } from "../../styles/theme.js/theme";
 import { useRouter } from "next/router";
 import { BackIcon } from "../../components/icons/backIcon";
-import { FacebookIcon } from "../../components/icons/facebookIcon";
+import { Icon } from "@iconify/react";
 
 export default function SignIn() {
   const valueChange = () => {};
@@ -96,7 +94,7 @@ export default function SignIn() {
                 </div>
                 <div>
                   <Button className="w-full font-medium flex gap-4 items-center justify-center">
-                    <FacebookIcon />
+                    <Icon icon="logos:facebook" width={18} height={18} />
                     Sign in with facebook
                   </Button>
                 </div>

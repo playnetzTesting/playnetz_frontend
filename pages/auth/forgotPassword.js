@@ -1,11 +1,6 @@
 import Head from "next/head";
-import Image from "next/image";
-import Link from "next/link";
 import { Button } from "../../components/button/button";
 import CustomInput from "../../components/customInput/customInput";
-import PlaynetzLogo from "../../components/logo/logo";
-import Producer from "../../assets/producer.svg";
-import User from "../../assets/user.svg";
 import { StyledBackButton } from "../../styles/theme.js/theme";
 import { BackIcon } from "../../components/icons/backIcon";
 import { useRouter } from "next/router";
