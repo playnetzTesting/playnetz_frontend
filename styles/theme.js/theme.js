@@ -1,7 +1,7 @@
 import styled from "styled-components";
 
 export const StyledButton = styled.button`
-  background-color: #33a4d8;
+  background-color: ${(props) => (props.bg ? "" : "#33a4d8;")};
   color: white;
   border-radius: 15px 0 0 15px;
 `;
@@ -19,4 +19,4 @@ export const StyledBackButton = styled.button`
   display: flex;
   align-items: center;
   gap: 4px;
-`
+`;
