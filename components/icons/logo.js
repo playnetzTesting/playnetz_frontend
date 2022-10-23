@@ -1,7 +1,10 @@
+import Image from "next/image";
+import Logo from "../../assets/logo.png";
+
 export default function PlaynetzLogo({ width, height }) {
   return (
     <>
-      <svg
+      {/* <svg
         width={width}
         height={height}
         viewBox="0 0 166 43"
@@ -39,7 +42,8 @@ export default function PlaynetzLogo({ width, height }) {
             <stop offset="1" stopColor="#33A4D8" />
           </linearGradient>
         </defs>
-      </svg>
+      </svg> */}
+      <Image width={width} height={height} src={Logo} alt="logo" />
     </>
   );
 }
