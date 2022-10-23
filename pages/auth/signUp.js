@@ -4,9 +4,30 @@ import { Button } from "../../components/button/button";
 import { StyledBackButton } from "../../styles/theme.js/theme";
 import { BackIcon } from "../../components/icons/backIcon";
 import { useRouter } from "next/router";
+import { useEffect, useRef, useState } from "react";
+import { ModalShell } from "../../components/modal/modal";
+import CustomInput from "../../components/customInput/customInput";
 
 export default function SignUp() {
+  const [open, setOpen] = useState(true);
   const router = useRouter();
+
+  const modalRef = useRef();
+
+  useEffect(() => {
+    function handler(e) {
+      if (modalRef.current.contains(e.target)) {
+        setOpen(true);
+      }
+    }
+    window.addEventListener("click", handler);
+    return () => window.removeEventListener("click", handler);
+  }, []);
+
+  const openModal = () => {
+    setOpen(!open);
+    console.log(open);
+  };
 
   return (
     <div className="bg-[#050F14]">
@@ -18,14 +39,24 @@ export default function SignUp() {
 
       <main className="h-screen min-h-screen w-full">
         <div className="w-full h-full">
-          <div className="w-full absolute top-0 left-0 p-6">
-            <StyledBackButton onClick={() => router.push("/")}>
+          <div className="w-full absolute top-0 left-0 p-6 z-20">
+            <StyledBackButton className="z-50" onClick={() => router.push("/")}>
               <BackIcon />
               back
             </StyledBackButton>
           </div>
-          <div className="w-full h-full grid grid-cols-3 ">
-            <div className="hidden lg:flex bg-[#33a4d8] md:col-span-2 h-full w-full justify-center"></div>
+          <div className="w-full z-0 h-full grid grid-cols-3 ">
+            <div className="hidden z-0 lg:flex bg-[#33a4d8] md:col-span-2 h-full w-full">
+              <video
+                src="https://css-tricks-post-videos.s3.us-east-1.amazonaws.com/blurry-trees.mov"
+                autoplay={true}
+                loop
+                // playsinline
+                muted
+                controls={false}
+              ></video>
+            </div>
+
             <div className="col-span-3 lg:col-span-1 flex items-center justify-center w-full h-full p-4">
               <div className="w-full flex items-center justify-center p-6">
                 <div className="flex flex-col justify-center gap-4">
@@ -44,13 +75,17 @@ export default function SignUp() {
                       Select user type to begin
                     </h2>
                     <div className="flex w-full justify-between items-center gap-4">
-                      <Button className="w-1/2">Producer</Button>
+                      <Button className="w-1/2" onClick={() => openModal()}>
+                        Producer
+                      </Button>
                       <Button className="w-1/2">User</Button>
                     </div>
                     <div className="mt-4 flex items-center gap-x-2">
                       <p className="text-white">already have an account?</p>
                       <Link href="/auth/signIn" passHref>
-                        <a className="text-[#33A4D8] focus:underline text-lg font-semibold">Sign In</a>
+                        <a className="text-[#33A4D8] focus:underline text-lg font-semibold">
+                          Sign In
+                        </a>
                       </Link>
                     </div>
                   </div>
@@ -59,6 +94,45 @@ export default function SignUp() {
             </div>
           </div>
         </div>
+        <>
+          <ModalShell open={open} refs={modalRef}>
+            <div className="w-full md:w-[40%] bg-white p-6 rounded-[15px]">
+              {/* heding */}
+              <div className="flex justify-between items-center">
+                <h2 className="text-[#2B8BB7] text-2xl font-bold">
+                  Sign Up - Producer
+                </h2>
+                <svg
+                  width="24"
+                  height="24"
+                  onClick={() => openModal()}
+                  viewBox="0 0 32 32"
+                  fill="none"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <rect width="32" height="32" rx="16" fill="#D83333" />
+                  <path
+                    d="M20.7866 9.33331L15.9999 14.12L11.2133 9.33331L9.33325 11.2133L14.1199 16L9.33325 20.7866L11.2133 22.6666L15.9999 17.88L20.7866 22.6666L22.6666 20.7866L17.8799 16L22.6666 11.2133L20.7866 9.33331Z"
+                    fill="white"
+                  />
+                </svg>
+              </div>
+              {/* heding */}
+
+              <div className="mt-4">
+                <form className="flex flex-col gap-4">
+                  <div className="flex flex-col md:flex-row gap-4">
+                    <CustomInput type="text" placeholder="first name" />
+                    <CustomInput type="text" placeholder="last name" />
+                  </div>
+                  <div className="flex gap-4">
+                    <CustomInput type="email" placeholder="email" />
+                  </div>
+                </form>
+              </div>
+            </div>
+          </ModalShell>
+        </>
       </main>
     </div>
   );
