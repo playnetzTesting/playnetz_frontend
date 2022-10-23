@@ -38,7 +38,7 @@ export default function SignUp() {
         <link rel="icon" href="/favicon.ico" />
       </Head>
 
-      <main className="h-screen min-h-screen w-full">
+      <main className="h-full min-h-screen w-full">
         <div className="w-full h-full">
           <div className="w-full absolute top-0 left-0 p-6 z-20">
             <StyledBackButton className="z-50" onClick={() => router.push("/")}>
@@ -50,7 +50,7 @@ export default function SignUp() {
             <div className="hidden z-0 lg:flex bg-[#33a4d8] md:col-span-2 h-full w-full">
               <video
                 src="https://css-tricks-post-videos.s3.us-east-1.amazonaws.com/blurry-trees.mov"
-                autoplay={true}
+                autoPlay={true}
                 loop
                 muted
                 controls={false}
