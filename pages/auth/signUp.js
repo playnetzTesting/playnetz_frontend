@@ -38,7 +38,7 @@ export default function SignUp() {
         <link rel="icon" href="/favicon.ico" />
       </Head>
 
-      <main className="h-full min-h-screen w-full">
+      <main className="h-full flex items-center min-h-screen w-full">
         <div className="w-full h-full">
           <div className="w-full absolute top-0 left-0 p-6 z-20">
             <StyledBackButton className="z-50" onClick={() => router.push("/")}>
