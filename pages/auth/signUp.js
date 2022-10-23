@@ -7,6 +7,7 @@ import { useRouter } from "next/router";
 import { useEffect, useRef, useState } from "react";
 import { ModalShell } from "../../components/modal/modal";
 import CustomInput from "../../components/customInput/customInput";
+import { Icon } from "@iconify/react";
 
 export default function SignUp() {
   const [open, setOpen] = useState(true);
@@ -51,7 +52,6 @@ export default function SignUp() {
                 src="https://css-tricks-post-videos.s3.us-east-1.amazonaws.com/blurry-trees.mov"
                 autoplay={true}
                 loop
-                // playsinline
                 muted
                 controls={false}
               ></video>
@@ -102,20 +102,14 @@ export default function SignUp() {
                 <h2 className="text-[#2B8BB7] text-2xl font-bold">
                   Sign Up - Producer
                 </h2>
-                <svg
-                  width="24"
-                  height="24"
+                <Icon
+                  icon="ant-design:close-circle-filled"
+                  color="red"
+                  width={24}
+                  className="cursor-pointer"
+                  height={24}
                   onClick={() => openModal()}
-                  viewBox="0 0 32 32"
-                  fill="none"
-                  xmlns="http://www.w3.org/2000/svg"
-                >
-                  <rect width="32" height="32" rx="16" fill="#D83333" />
-                  <path
-                    d="M20.7866 9.33331L15.9999 14.12L11.2133 9.33331L9.33325 11.2133L14.1199 16L9.33325 20.7866L11.2133 22.6666L15.9999 17.88L20.7866 22.6666L22.6666 20.7866L17.8799 16L22.6666 11.2133L20.7866 9.33331Z"
-                    fill="white"
-                  />
-                </svg>
+                />
               </div>
               {/* heding */}
 
